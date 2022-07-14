@@ -1,4 +1,3 @@
-let selectOutput = document.querySelector("#change-graph");
 
 //making the minutes display on load
 
@@ -93,16 +92,14 @@ grid: {
 };
 
 
-
 var chart = new ApexCharts(document.querySelector("#chart"), optionsMin);
 chart.render();
 
-//graph changing options
+//graph forward mins changing options
 
 
 function handleGraph () {
   let changeGraph = document.getElementById("chart","radio");
-  console.log(changeGraph);
 
   if (changeGraph === "true") {
     chart.updateOptions({
@@ -166,15 +163,12 @@ xaxis: {
 })
   }}
 
-  // selectOutput.addEventListener("change", eventValue)
 
-
-  //graph changing options
+  //graph backward mins changing options
 
 
 function returnGraph () {
   let returnGraph = document.getElementById("chart");
-  console.log(returnGraph);
 
   if (returnGraph === "true") {
       chart.updateOptions({
@@ -240,12 +234,12 @@ function returnGraph () {
   } 
 }
 
+ //graph radio buttons changing options
 
-function graphHour () {
-  let graphHour = document.getElementById("chart");
-  console.log(graphHour);
+function graphMinutes () {
+  let graphMinutes = document.getElementById("chart");
 
-  if (graphHour === "true") {
+  if (graphMinutes === "true") {
       chart.updateOptions({
       series: [{
       name: "Voltage",
@@ -302,6 +296,73 @@ function graphHour () {
   }
   ],
   xaxis: {
+    categories: ['3:56pm', '3:57pm', '3:58pm', '3:59pm', '4:00pm', '4:01pm','4:02pm','4:03pm'
+    ],
+  },
+  })
+  } 
+}
+
+function graphHour () {
+  let graphHour = document.getElementById("chart");
+
+  if (graphHour === "true") {
+      chart.updateOptions({
+      series: [{
+        name: "Voltage",
+        data: [0, 35, 130, -10, 50, 117, 300, 25]
+      },
+      {
+        name: "Current",
+        data: [10, 5, 98, 0, 1, 188, -100, 3]
+      },
+      {
+        name: 'Frequency',
+        data: [111, 53, 300, -100, 5, 15, -220,44]
+      },
+      {
+        name: 'Temperature',
+        data: [5, -4, 255, 26, 110, -100,10, -50]
+      },
+      {
+        name: 'Vibration',
+        data: [-10, 300, -80, 0, -100, 300,-200, -10]
+      },
+      {
+        name: 'Power',
+        data: [-10, -80, -200, -111, -5,280 , 310 ]
+      }
+  ],
+ 
+  })
+} else {
+  chart.updateOptions({
+  series: [{
+    name: "Voltage",
+    data: [-10, 50,0, 35, 130, 117, 300, 25]
+  },
+  {
+    name: "Current",
+    data: [98, 0, 1, 10, 5, 188, -100, 3]
+  },
+  {
+    name: 'Frequency',
+    data: [-100, 111, 53, 300, 5, 15, -220,44]
+  },
+  {
+    name: 'Temperature',
+    data: [ 110, -100,10, -50,5, -4, 255, 26,]
+  },
+  {
+    name: 'Vibration',
+    data: [-10, 300, -80, 0, -100, 300,-200, -10]
+  },
+  {
+    name: 'Power',
+    data: [-10, -80, -200, -111, -5,280 , 310 ]
+  }
+ ],
+  xaxis: {
     categories: ['3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', '8:00pm','9:00pm','10:00pm'
     ],
   },
@@ -309,6 +370,273 @@ function graphHour () {
   } 
 }
 
+function graphDay () {
+  let graphDay = document.getElementById("chart");
+
+  if (graphDay === "true") {
+      chart.updateOptions({
+      series: [{
+      name: "Voltage",
+      data: [0, 35, 130, -10, 50, 117, 300, 25]
+    },
+    {
+      name: "Current",
+      data: [10, 5, 98, 0, 1, 188, -100, 3]
+    },
+    {
+      name: 'Frequency',
+      data: [111, 53, 300, -100, 5, 15, -220,44]
+    },
+    {
+      name: 'Temperature',
+      data: [5, -4, 255, 26, 110, -100,10, -50]
+    },
+    {
+      name: 'Vibration',
+      data: [-10, 300, -80, 0, -100, 300,-200, -10]
+    },
+    {
+      name: 'Power',
+      data: [-10, -80, -200, -111, -5,280 , 310 ]
+    }
+  ],
+ 
+  })
+} else {
+  chart.updateOptions({
+  series: [{
+  name: "Voltage",
+  data: [5, 150, 0, 35, 110, 60, 67, 50, 25]
+  },
+  {
+  name: "Current",
+  data: [0, 166, 188, 100, 120, 155, 98,  53, 3]
+  },
+  {
+  name: 'Frequency',
+  data: [55, 95, 0, 53, 6, -100, -10, 44, -300]
+  },
+  {
+  name: 'Temperature',
+  data: [ 26, 50, 50, -45, 0, 100, 0, -50, 300]
+  },
+  {
+  name: 'Vibration',
+  data: [ 300,-200, -80, -100, -300,-250, 0, 100, -10]
+  },
+  {
+  name: 'Power',
+  data: [-51,-180 , -10, -100, -80, -200, -111, 1, 44]
+  }
+  ],
+  xaxis: {
+    categories: ['Dec 11', 'Dec 12', 'Dec 13', 'Dec 14', 'Dec 15', 'Dec 16','Dec 17','Dec 18','Dec 19'
+    ],
+  },
+  })
+  } 
+}
+
+function graphWeekly () {
+  let graphWeekly = document.getElementById("chart");
+
+  if (graphWeekly === "true") {
+      chart.updateOptions({
+      series: [{
+      name: "Voltage",
+      data: [0, 35, 130, -10, 50, 117, 300, 25]
+    },
+    {
+      name: "Current",
+      data: [10, 5, 98, 0, 1, 188, -100, 3]
+    },
+    {
+      name: 'Frequency',
+      data: [111, 53, 300, -100, 5, 15, -220,44]
+    },
+    {
+      name: 'Temperature',
+      data: [5, -4, 255, 26, 110, -100,10, -50]
+    },
+    {
+      name: 'Vibration',
+      data: [-10, 300, -80, 0, -100, 300,-200, -10]
+    },
+    {
+      name: 'Power',
+      data: [-10, -80, -200, -111, -5,280 , 310 ]
+    }
+  ],
+ 
+  })
+} else {
+  chart.updateOptions({
+  series: [{
+  name: "Voltage",
+  data: [150, 60, 50, 25]
+  },
+  {
+  name: "Current",
+  data: [ 0, 166, 188, 100]
+  },
+  {
+  name: 'Frequency',
+  data: [-100, 55, 95, -44]
+  },
+  {
+  name: 'Temperature',
+  data: [ 26, 100,0, -50]
+  },
+  {
+  name: 'Vibration',
+  data: [ -250, 0, 300,-200, ]
+  },
+  {
+  name: 'Power',
+  data: [ -111, -51,-180 , -10 ]
+  }
+  ],
+  xaxis: {
+    categories: ['Mon2-Sat 7', 'Mon2-Sat 14', 'Mon2-Sat 21', 'Mon2-Sat 28'
+    ],
+  },
+  })
+  } 
+}
+
+function graphMonthly () {
+  let graphMonthly = document.getElementById("chart");
+
+  if (graphMonthly === "true") {
+      chart.updateOptions({
+      series: [{
+      name: "Voltage",
+      data: [0, 35, 130, -10, 50, 117, 300, 25]
+    },
+    {
+      name: "Current",
+      data: [10, 5, 98, 0, 1, 188, -100, 3]
+    },
+    {
+      name: 'Frequency',
+      data: [111, 53, 300, -100, 5, 15, -220,44]
+    },
+    {
+      name: 'Temperature',
+      data: [5, -4, 255, 26, 110, -100,10, -50]
+    },
+    {
+      name: 'Vibration',
+      data: [-10, 300, -80, 0, -100, 300,-200, -10]
+    },
+    {
+      name: 'Power',
+      data: [-10, -80, -200, -111, -5,280 , 310 ]
+    }
+  ],
+ 
+  })
+} else {
+  chart.updateOptions({
+  series: [{
+  name: "Voltage",
+  data: [150, 60, 50, 25,-10, -80, -200, -111, -5,280 , 310,3]
+  },
+  {
+  name: "Current",
+  data: [ 0, 166, 188, 100, -10, 300, -80, 0, -100, 300,-200, -10]
+  },
+  {
+  name: 'Frequency',
+  data: [-100, 55, 95, -44, 5, -4, 255, 26, 110, -100, 10, -50]
+  },
+  {
+  name: 'Temperature',
+  data: [ 26, 100,0, -50, 111, 53, 300, -100, 5, 15, -220,44]
+  },
+  {
+  name: 'Vibration',
+  data: [ -250, 0, 300,-200, 10, 5, 98, 0, 1, 188, -100, 3 ]
+  },
+  {
+  name: 'Power',
+  data: [ -111, -51,-180 , -10, 0, 35, 130, -10, 50, 117, 300, 25 ]
+  }
+  ],
+  xaxis: {
+    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'
+    ],
+  },
+  })
+  } 
+}
+
+function graphYearly () {
+  let graphYearly = document.getElementById("chart");
+
+  if (graphYearly === "true") {
+      chart.updateOptions({
+      series: [{
+      name: "Voltage",
+      data: [0, 35, 130, -10, 50, 117, 300, 25]
+    },
+    {
+      name: "Current",
+      data: [10, 5, 98, 0, 1, 188, -100, 3]
+    },
+    {
+      name: 'Frequency',
+      data: [111, 53, 300, -100, 5, 15, -220,44]
+    },
+    {
+      name: 'Temperature',
+      data: [5, -4, 255, 26, 110, -100,10, -50]
+    },
+    {
+      name: 'Vibration',
+      data: [-10, 300, -80, 0, -100, 300,-200, -10]
+    },
+    {
+      name: 'Power',
+      data: [-10, -80, -200, -111, -5,280 , 310 ]
+    }
+  ],
+ 
+  })
+} else {
+  chart.updateOptions({
+  series: [{
+  name: "Voltage",
+  data: [-80, 300, 60, 50, 25,-10, -200, -111, -5,280 , 310,3]
+  },
+  {
+  name: "Current",
+  data: [ -10, 300, -80, 0, 0, 166, 300,-200, -10, 8, 100, -100, ]
+  },
+  {
+  name: 'Frequency',
+  data: [ -44,-100, 55, 95, 5, -4, -100, 255, 26, 110, 10, -50]
+  },
+  {
+  name: 'Temperature',
+  data: [  53, 300, -100, 5,26, 100,0, -50, 111, 15, -220,44]
+  },
+  {
+  name: 'Vibration',
+  data: [  0, 300,-250,5, 98, 0, -200, 10, 1, 188, -100, 3 ]
+  },
+  {
+  name: 'Power',
+  data: [ -180 , -10, 0, -111, -51,35, 130, 117, 300, 25-10, 50, ]
+  }
+  ],
+  xaxis: {
+    categories: ['Jan 1', 'Feb 1', 'Mar 1', 'Apr 1', 'May 1', 'Jun 1', 'Jul 1', 'Aug 1', 'Sept 1', 'Oct 1', 'Nov 1', 'Dec 1'
+    ],
+  },
+  })
+  } 
+}
 
 
 
@@ -326,12 +654,6 @@ function graphHour () {
 //     position: 'top'
 //   }
 // })
-
-
-
-
-
-
 
 
   
