@@ -7,29 +7,7 @@
 #measurement .right{
    width: 70%;
    box-shadow: 0px 2px 12px rgba(37, 51, 66, 0.15);  
-   background: #fff;
 }
-
-@media (max-width:780px) {
-   .voltage{
-      flex-direction: column !important;
-   }
-   #measurement .img{
-      width: 90%!important;
-   }
-   #measurement .right{
-      width: 100%;
-     
-   }
-   #measurement .left{
-      width: 100%;
-     
-   }
-   #measurement {
-      width: 100%;
-   }
-}
-
 
 #measurement .left p {
    font-family: 'Roboto';
@@ -40,13 +18,11 @@
 }
 
 #measurement .left .voltage{
-font-family: 'Roboto';
-font-weight: 700;
-font-size: 10px;
-line-height: 16px;
-letter-spacing: 0.4px;
-color: #333333;
-padding-bottom: 12px;
+   font-family: 'Roboto';
+   font-size: 10px;
+   line-height: 16px;
+   letter-spacing: 0.4px;
+   color: #333333;
 }
 
 #measurement .img{
@@ -59,7 +35,6 @@ padding-bottom: 12px;
    line-height: 16px;
    letter-spacing: 0.4px;
    color: #333333;
-   padding-left: 10px;
    }
    
    #measurement .left .borders{
@@ -70,20 +45,12 @@ padding-bottom: 12px;
       box-shadow: 0px 4px 47px rgba(0, 0, 0, 0.12);
    }
 
-   #measurement .location{
-      position: relative;
-   }
-
-   .location .point{
-   background: #FFFFFF;
-   padding:10px;
-   padding-right: 40px;
-   border: 1px solid #FFFFFF;
-   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
-   border-radius: 4px;
-   position: absolute;
-   left: 104px;
-   top: 70px;
+    .location .point{
+      border: 1px solid #FFFFFF;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+      border-radius: 4px;
+      left: 104px;
+      top: 70px;
    }
 
    .img-circle {
@@ -91,18 +58,28 @@ padding-bottom: 12px;
       background: #F5F5F5;
       height: 50px;
       width: 50px;
-   }
+   }   
 
-   #chart {
-      max-width: 100%;
-      margin: 35px auto;
-    }
-    
-    table td {
-      padding: 5px;
-      background: #ccc;
-    }
-    
-    td.selected {
-      background: #f00;
-    }
+
+    @media (max-width:780px) {
+      .voltage-flex{
+         flex-direction:column !important;
+      }
+      #measurement .img{
+         width: 90%!important;
+      }
+      #measurement .right{
+         width: 100%!important;
+        
+      }
+      #measurement .left{
+         width: 100% !important;
+        
+      }
+      #measurement {
+         width: 100% !important;
+      }
+      #chart{
+         width: 100%!important;
+      }
+   }

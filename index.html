@@ -13,7 +13,7 @@
 <body>
    <section id="measurement" class="pt-5 pb-5">
       <!-- Voltage Representation -->
-      <div class="container borders voltage d-flex px-0 py-5">
+      <div class="container borders voltage-flex d-flex px-0 py-5">
          <div class="right">
             <div class="text-start">
                <p class="mb-0 ps-4 fw-bold  pt-3">Real Time measurement</p>
@@ -73,12 +73,12 @@
                <div class="d-flex p-3 justify-content-between">
                   <div >
                      <ul class="list-unstyled">
-                        <li class="voltage">Voltage <span>220.00V</span></li>
-                        <li class="voltage">Current <span>25.00A</span></li>
-                        <li class="voltage">Power <span>6.00Kw</span></li>
-                        <li class="voltage">Frequency <span>50.00Hz</span></li>
-                        <li class="voltage">Temperature<span>35.00 oC</span></li>
-                        <li class="voltage">Amplititude<span>6.00 mm/s</span></li>
+                        <li class="voltage pb-2 fw-bold">Voltage <span class="ps-3">220.00V</span></li>
+                        <li class="voltage pb-2 fw-bold">Current <span class="ps-3">25.00A</span></li>
+                        <li class="voltage pb-2 fw-bold">Power <span class="ps-3">6.00Kw</span></li>
+                        <li class="voltage pb-2 fw-bold">Frequency <span class="ps-3">50.00Hz</span></li>
+                        <li class="voltage pb-2 fw-bold">Temperature<span class="ps-3">35.00 oC</span></li>
+                        <li class="voltage pb-2 fw-bold">Amplititude<span class="ps-3">6.00 mm/s</span></li>
                      </ul>
                   </div>
                   <div class="ps-4">
@@ -86,38 +86,37 @@
                         <div>
                            <img src="./img/measurmentTemperature.png" alt="">
                         </div>                       
-                        <span>Coolant Temperature  <br>
+                        <span class="ps-3">Coolant Temperature  <br>
                            51.O oc</span>
                         </div>
                      <div class="d-flex">
                         <div>
                            <img src="./img/measurmentEngine-oil.png" alt="">
                         </div>                       
-                        <span>Oil Pressure <br>
+                        <span class="ps-3">Oil Pressure <br>
                            4.5 Bar</span>
                      </div>
                      <div class="d-flex">
                         <div>
                            <img src="./img/measurmentGas-station.png" alt="">
                         </div>                       
-                        <span>Fuel Used  <br>
+                        <span class="ps-3">Fuel Used  <br>
                            32.2 litres</span>
                      </div>
                      <div class="d-flex">
                         <div>
                            <img src="./img/measurmentCar-battery.png" alt="">
                         </div>                       
-                        <span>Battery Level  <br>
+                        <span class="ps-3">Battery Level  <br>
                            25.2 V</span>
                      </div>
                      <div class="d-flex">
                         <div>
                            <img src="./img/measurmentDelivery-time.png" alt="">
                         </div>                       
-                        <span>Run Hours  <br>
+                        <span class="ps-3">Run Hours  <br>
                            309 h</span>
                      </div>
-                    
                   </div>
                </div>
             </div>
@@ -132,12 +131,11 @@
                   </div>
                </div>
                <hr>
-               <section class="location p-3">
-
+               <section class="location position-relative p-3">
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127151.14858192929!2d7.630591207955134!3d5.188011611347947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1042adf7eb5bf039%3A0x2478b29885742ad7!2sIkot%20Ekpene!5e0!3m2!1sen!2sng!4v1657600696114!5m2!1sen!2sng" 
-                  width="324" height="240" style="border:0;" allowfullscreen="" loading="lazy" 
+                  width="100%" height="240" style="border:0;" allowfullscreen="" loading="lazy" 
                   referrerpolicy="no-referrer-when-downgrade"></iframe>
-                  <div class="point">
+                  <div class="point position-absolute pe-4 pt-2 ps-2 pb-2 bg-light">
                      <p class="m-0">KH Generator 1</p>
                      <p class="m-0">Ikot Ema</p>
                   </div>
@@ -149,7 +147,7 @@
 
       <!-- Graph Representation -->
       <div class="container table-borders mb-3 mt-3">
-         <div id="chart">
+         <div id="chart" class="w-100">
             <div class="d-flex justify-content-evenly w-50 pt-4 pb-3">
                <div class="form-check">
                   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
@@ -192,8 +190,7 @@
             
          </div>
 
-         <div class="text-center pb-4" id="change-graph">
-            
+         <div class="text-center pb-4 pt-3" id="change-graph">            
             <i class="bi bi-caret-left-fill me-5"  id="event-value"  onclick="returnGraph()"></i>
             <i class="bi bi-caret-right-fill ms-5"  id="event-value"  onclick="handleGraph()" ></i>
          </div>
