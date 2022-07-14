@@ -264,22 +264,20 @@ function returnGraph () {
 
 
   
-// let checkbox = document.querySelector("#checkbox");
-// let box1 = document.querySelector(".box1");
-
+let checkbox = document.querySelector("#checkbox");
+let box = document.querySelector(".box");
  
 
-//   function changeHandle() {
+  function changeBg() {
  
-//     if (checkbox.checked == true){
-//       box1.style.backgroundColor = "blue";
-//     } else {
-//        box1.style.backgroundColor = "white";
-//     }
-
-//     console.log(checkbox);
-//   }
-
+    if (checkbox.checked === true){
+      box.style.backgroundColor = "blue";
+    } else {
+       box.style.backgroundColor = "white";
+    }
+  }
+  
+ 
  
 
 
