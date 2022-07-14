@@ -100,11 +100,11 @@ chart.render();
 //graph changing options
 
 
-function handleGraph (event) {
-  let eventValue = event
+function handleGraph () {
+  let eventValue = document.getElementById("chart");
   console.log(eventValue);
 
-  if (eventValue === "JANUARY") {
+  if (eventValue == "true") {
     chart.updateOptions({
     series: [{
     name: "Voltage",
@@ -132,7 +132,7 @@ function handleGraph (event) {
   }
 ],
 })
-  } else if (eventValue === "FEBRUARY") {
+  } else {
     chart.updateOptions({
     series: [{
     name: "Voltage",
@@ -160,46 +160,11 @@ function handleGraph (event) {
   }
 ],
 xaxis: {
-  categories: ['4:56pm', '3:57pm', '3:58pm', '3:59pm', '4:00pm', '4:01pm','4:02pm','4:03pm'
+  categories: ['4:04pm', '4:05pm', '4:06pm', '4:07pm', '4:08pm', '4:09pm','4:10pm','4:11pm'
   ],
 },
 })
-}  else   
-    chart.updateOptions({
-      series: [{
-        name: "Voltage",
-        data: [50, 35, 110, 150, 60, 67, 50, 25]
-      },
-      {
-        name: "Current",
-        data: [120, 155, 98, 0, 166, 188, 100, 53]
-      },
-      {
-        name: 'Frequency',
-        data: [0, 53, 6, -100, 55, 95, -10,44]
-      },
-      {
-        name: 'Temperature',
-        data: [50, -45, 0, 26, 50, 100,0, -50]
-      },
-      {
-        name: 'Vibration',
-        data: [-100, -300, -80, -250, 0, 300,-200, -10]
-      },
-      {
-        name: 'Power',
-        data: [-100, -80, -200, -111, -51,-180 , -10 ]
-      }
-    ],
-    xaxis: {
-      categories: ['4:59pm', '3:57pm', '3:58pm', '3:59pm', '4:00pm', '4:01pm','4:02pm','4:03pm'
-      ],
-    },
-  })
-}
-
-
-
+  }}
 selectOutput.addEventListener("change", eventValue)
 
 
@@ -226,19 +191,21 @@ selectOutput.addEventListener("change", eventValue)
 
 
   
-let checkboxes = document.querySelector("#checkbox");
-let box1 = document.querySelector(".box1");
+// let checkbox = document.querySelector("#checkbox");
+// let box1 = document.querySelector(".box1");
 
  
 
-  function changeHandle() {
+//   function changeHandle() {
  
-    if (checkboxes.checked == true){
-      box1.style.backgroundColor = "blue";
-    } else {
-       box1.style.backgroundColor = "white";
-    }
-  }
+//     if (checkbox.checked == true){
+//       box1.style.backgroundColor = "blue";
+//     } else {
+//        box1.style.backgroundColor = "white";
+//     }
+
+//     console.log(checkbox);
+//   }
 
  
 
