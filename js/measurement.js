@@ -101,7 +101,7 @@ chart.render();
 
 
 function handleGraph () {
-  let changeGraph = document.getElementById("chart");
+  let changeGraph = document.getElementById("chart","radio");
   console.log(changeGraph);
 
   if (changeGraph === "true") {
@@ -239,6 +239,77 @@ function returnGraph () {
   })
   } 
 }
+
+
+function graphHour () {
+  let graphHour = document.getElementById("chart");
+  console.log(graphHour);
+
+  if (graphHour === "true") {
+      chart.updateOptions({
+      series: [{
+      name: "Voltage",
+      data: [0, 35, 130, -10, 50, 117, 300, 25]
+    },
+    {
+      name: "Current",
+      data: [10, 5, 98, 0, 1, 188, -100, 3]
+    },
+    {
+      name: 'Frequency',
+      data: [111, 53, 300, -100, 5, 15, -220,44]
+    },
+    {
+      name: 'Temperature',
+      data: [5, -4, 255, 26, 110, -100,10, -50]
+    },
+    {
+      name: 'Vibration',
+      data: [-10, 300, -80, 0, -100, 300,-200, -10]
+    },
+    {
+      name: 'Power',
+      data: [-10, -80, -200, -111, -5,280 , 310 ]
+    }
+  ],
+ 
+  })
+} else {
+  chart.updateOptions({
+  series: [{
+  name: "Voltage",
+  data: [50, 35, 110, 150, 60, 67, 50, 25]
+  },
+  {
+  name: "Current",
+  data: [120, 155, 98, 0, 166, 188, 100, 53]
+  },
+  {
+  name: 'Frequency',
+  data: [0, 53, 6, -100, 55, 95, -10,44]
+  },
+  {
+  name: 'Temperature',
+  data: [50, -45, 0, 26, 50, 100,0, -50]
+  },
+  {
+  name: 'Vibration',
+  data: [-100, -300, -80, -250, 0, 300,-200, -10]
+  },
+  {
+  name: 'Power',
+  data: [-100, -80, -200, -111, -51,-180 , -10 ]
+  }
+  ],
+  xaxis: {
+    categories: ['3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', '8:00pm','9:00pm','10:00pm'
+    ],
+  },
+  })
+  } 
+}
+
+
 
 
 // chart.updateOptions({
