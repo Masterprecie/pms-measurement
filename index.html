@@ -7,6 +7,7 @@
    <link rel="stylesheet" href="./css/bootstrap.min.css">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
    <link rel="stylesheet" href="./css/styles.css">
+   <script src="https://kit.fontawesome.com/eb25ac6d4f.js" crossorigin="anonymous"></script>
    <title>Document</title>
 </head>
 <body>
@@ -46,12 +47,23 @@
                      <p class="mb-0 fw-bold ps-2">Previous Parameter log</p>
                   </div>   
                               
-                  <div>
-                     <select class="form-select w-40px  h-30px form-select-sm" aria-label=".form-select-sm example">
-                        <option selected >Open</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                  <div class="position-relative">
+                     <div class="position-absolute" style="top: 9px; left: 3%;">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                     <select class=" form-select-sm  form-select w-40px  h-30px"  aria-label="multiple select example">
+                        <option value="1" selected >Jan</option>
+                        <option value="2">Feb</option>
+                        <option value="3">Mar</option>
+                        <option value="4">Apr</option>
+                        <option value="5">May</option>
+                        <option value="3">Jun</option>
+                        <option value="3">Jul</option>
+                        <option value="3">Aug</option>
+                        <option value="3">Sep</option>
+                        <option value="3">Oct</option>
+                        <option value="3">Nov</option>
+                        <option value="3">Dec</option>
                       </select>
                   </div>
                </div>               
@@ -136,9 +148,59 @@
 
 
       <!-- Graph Representation -->
-      <div class="container table-borders">
+      <div class="container table-borders mb-3 mt-3">
          <div id="chart">
+            <div class="d-flex justify-content-evenly w-50 pt-4 pb-3">
+               <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Minute
+                  </label>
+                </div>
+               <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Hour
+                  </label>
+                </div>
+               <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Day
+                  </label>
+                </div>
+               <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Week
+                  </label>
+                </div>
+               <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Month
+                  </label>
+                </div>
+               <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Year
+                  </label>
+                </div>
+            </div>
+                      
+            
          </div>
+
+         <div class="text-center pb-4" id="change-graph">
+            <i class="bi bi-caret-left-fill me-5 forwardBtn"  onclick="handleGraph()"></i>
+            <i class="bi bi-caret-right-fill ms-5 forwardBtn"  onclick="handleGraph()"></i>
+         </div>
+
+       
+         
+         
+         
       </div>
       
       <!-- Table Representation -->
@@ -159,22 +221,23 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr class="box1">
                 <th scope="row">
                   <div class="">
-                     <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+                     <input class="form-check-input" onclick="changeHandle()" type="checkbox" id="checkbox" value="" aria-label="...">
                    </div>
                 </th>
-                <td>Fuel Filled</td>
-                <td>1000</td>
-                <td>Litres</td>
-                <td>2021-05-16 </td>
-                <td>08:24</td>
+                
+                <td >Fuel Filled</td>
+                <td >1000</td>
+                <td >Litres</td>
+                <td >2021-05-16 </td>
+                <td >08:24</td>
               </tr>
-              <tr>
+              <tr class="box2">
                 <th scope="row">
                <div class="">
-                  <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+                  <input class="form-check-input"  type="checkbox" id="checkboxes" value="" aria-label="...">
                 </div></th>
                 <td>Fuel Level</td>
                 <td>1000</td>
@@ -182,21 +245,21 @@
                 <td>2021-05-16 </td>
                 <td>08:24</td>
               </tr>
-              <tr>
+              <tr class="box3">
                 <th scope="row">
                <div class="">
-                  <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+                  <input class="form-check-input"  type="checkbox" id="checkboxess" value="" aria-label="...">
                 </div></th>
-                <td>Run Hours</td>
+                <td >Run Hours</td>
                 <td>1000</td>
                 <td>Litres</td>
                 <td>2021-05-16 </td>
                 <td>08:24</td>
               </tr>
-              <tr>
+              <tr class="box4">
                 <th scope="row">
                <div class="">
-                  <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+                  <input class="form-check-input"  type="checkbox" class="checkbox" value="" aria-label="...">
                 </div></th>
                 <td>Coolant Temperature</td>
                 <td>1000</td>
@@ -204,10 +267,10 @@
                 <td>2021-05-16 </td>
                 <td>08:24</td>
               </tr>
-              <tr>
+              <tr class="box5">
                 <th scope="row">
                <div class="">
-                  <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+                  <input class="form-check-input"  type="checkbox" class="checkbox" value="" aria-label="...">
                 </div></th>
                 <td>Battery Level</td>
                 <td>1000</td>
@@ -219,10 +282,15 @@
           </table>
           <p class="text-end  pb-4"> <a href="#"class="text-decoration-none pe-4 text-black-50" >View All</a></p>         
       </div>
+  
+        
 
+       
+      
      
    </section>
    
+ 
       
           
    

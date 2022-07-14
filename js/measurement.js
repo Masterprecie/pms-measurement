@@ -1,16 +1,31 @@
+let selectOutput = document.querySelector("#change-graph");
 
- var options = {
+//making the minutes display on load
+
+ var optionsMin = {
   series: [{
-    name: "Session Duration",
-    data: [45, 52, 38, 24, 33, 26, 21, 20, 6, 8, 15, 10]
+    name: "Voltage",
+    data: [50, 35, 110, 150, 60, 67, 50, 25]
   },
   {
-    name: "Page Views",
-    data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51, 32, 35]
+    name: "Current",
+    data: [120, 155, 98, 0, 166, 188, 100, 53]
   },
   {
-    name: 'Total Visits',
-    data: [87, 57, 74, 99, 75, 38, 62, 47, 82, 56, 45, 47]
+    name: 'Frequency',
+    data: [0, 53, 6, -100, 55, 95, -10,44]
+  },
+  {
+    name: 'Temperature',
+    data: [50, -45, 0, 26, 50, 100,0, -50]
+  },
+  {
+    name: 'Vibration',
+    data: [-100, -300, -80, -250, 0, 300,-200, -10]
+  },
+  {
+    name: 'Power',
+    data: [-100, -80, -200, -111, -51,-180 , -10 ]
   }
 ],
   chart: {
@@ -25,8 +40,8 @@ dataLabels: {
 },
 stroke: {
   width: [2, 2, 2],
-  curve: 'straight',
-  dashArray: [0, 8, 5]
+  curve: 'smooth',
+  dashArray: [0, 0, 0]
 },
 title: {
   text: 'Page Statistics',
@@ -44,8 +59,7 @@ markers: {
   }
 },
 xaxis: {
-  categories: ['01 Jan', '02 Jan', '03 Jan', '04 Jan', '05 Jan', '06 Jan', '07 Jan', '08 Jan', '09 Jan',
-    '10 Jan', '11 Jan', '12 Jan'
+  categories: ['3:56pm', '3:57pm', '3:58pm', '3:59pm', '4:00pm', '4:01pm','4:02pm','4:03pm'
   ],
 },
 tooltip: {
@@ -79,5 +93,156 @@ grid: {
 };
 
 
-var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+var chart = new ApexCharts(document.querySelector("#chart"), optionsMin);
 chart.render();
+
+//graph changing options
+
+
+function handleGraph (event) {
+  let eventValue = event
+  console.log(eventValue);
+
+  if (eventValue === "JANUARY") {
+    chart.updateOptions({
+    series: [{
+    name: "Voltage",
+    data: [50, 35, 110, 150, 60, 67, 50, 25]
+  },
+  {
+    name: "Current",
+    data: [120, 155, 98, 0, 166, 188, 100, 53]
+  },
+  {
+    name: 'Frequency',
+    data: [0, 53, 6, -100, 55, 95, -10,44]
+  },
+  {
+    name: 'Temperature',
+    data: [50, -45, 0, 26, 50, 100,0, -50]
+  },
+  {
+    name: 'Vibration',
+    data: [-100, -300, -80, -250, 0, 300,-200, -10]
+  },
+  {
+    name: 'Power',
+    data: [-100, -80, -200, -111, -51,-180 , -10 ]
+  }
+],
+})
+  } else if (eventValue === "FEBRUARY") {
+    chart.updateOptions({
+    series: [{
+    name: "Voltage",
+    data: [50, 35, 110, 150, 60, 67, 50, 25]
+  },
+  {
+    name: "Current",
+    data: [120, 155, 98, 0, 166, 188, 100, 53]
+  },
+  {
+    name: 'Frequency',
+    data: [0, 53, 6, -100, 55, 95, -10,44]
+  },
+  {
+    name: 'Temperature',
+    data: [50, -45, 0, 26, 50, 100,0, -50]
+  },
+  {
+    name: 'Vibration',
+    data: [-100, -300, -80, -250, 0, 300,-200, -10]
+  },
+  {
+    name: 'Power',
+    data: [-100, -80, -200, -111, -51,-180 , -10 ]
+  }
+],
+xaxis: {
+  categories: ['4:56pm', '3:57pm', '3:58pm', '3:59pm', '4:00pm', '4:01pm','4:02pm','4:03pm'
+  ],
+},
+})
+}  else   
+    chart.updateOptions({
+      series: [{
+        name: "Voltage",
+        data: [50, 35, 110, 150, 60, 67, 50, 25]
+      },
+      {
+        name: "Current",
+        data: [120, 155, 98, 0, 166, 188, 100, 53]
+      },
+      {
+        name: 'Frequency',
+        data: [0, 53, 6, -100, 55, 95, -10,44]
+      },
+      {
+        name: 'Temperature',
+        data: [50, -45, 0, 26, 50, 100,0, -50]
+      },
+      {
+        name: 'Vibration',
+        data: [-100, -300, -80, -250, 0, 300,-200, -10]
+      },
+      {
+        name: 'Power',
+        data: [-100, -80, -200, -111, -51,-180 , -10 ]
+      }
+    ],
+    xaxis: {
+      categories: ['4:59pm', '3:57pm', '3:58pm', '3:59pm', '4:00pm', '4:01pm','4:02pm','4:03pm'
+      ],
+    },
+  })
+}
+
+
+
+selectOutput.addEventListener("change", eventValue)
+
+
+// chart.updateOptions({
+//   series: [{
+//     data: [{
+//       x: "02-02-2002",
+//       y: 44
+//     }, {
+//       x: "12-02-2002",
+//       y: 51
+//     }]
+//   }],
+//   xaxis: {
+//     position: 'top'
+//   }
+// })
+
+
+
+
+
+
+
+
+  
+let checkboxes = document.querySelector("#checkbox");
+let box1 = document.querySelector(".box1");
+
+ 
+
+  function changeHandle() {
+ 
+    if (checkboxes.checked == true){
+      box1.style.backgroundColor = "blue";
+    } else {
+       box1.style.backgroundColor = "white";
+    }
+  }
+
+ 
+
+
+
+
+

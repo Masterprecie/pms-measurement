@@ -98,3 +98,11 @@ padding-bottom: 12px;
       margin: 35px auto;
     }
     
+    table td {
+      padding: 5px;
+      background: #ccc;
+    }
+    
+    td.selected {
+      background: #f00;
+    }
