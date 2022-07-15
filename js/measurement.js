@@ -24,7 +24,7 @@
   },
   {
     name: 'Power',
-    data: [-100, -80, -200, -111, -51,-180 , -10 ]
+    data: [-100, -80, -200, -111, -51,-180 , -10,300 ]
   }
 ],
   chart: {
@@ -125,7 +125,7 @@ function handleGraph () {
   },
   {
     name: 'Power',
-    data: [-100, -80, -200, -111, -51,-180 , -10 ]
+    data: [-100, -80, -200, -111, -51,-180 , -10,300 ]
   }
 ],
 })
@@ -153,7 +153,7 @@ function handleGraph () {
   },
   {
     name: 'Power',
-    data: [-10, -80, -200, -111, -5,280 , 310 ]
+    data: [-10, -80, -200, -111, -5, 280 , 310, -200 ]
   }
 ],
 xaxis: {
@@ -223,7 +223,7 @@ function returnGraph () {
   },
   {
   name: 'Power',
-  data: [-100, -80, -200, -111, -51,-180 , -10 ]
+  data: [-100, -80, -200, -111, -51,-180 , -10,300 ]
   }
   ],
   xaxis: {
@@ -292,7 +292,7 @@ function graphMinutes () {
   },
   {
   name: 'Power',
-  data: [-100, -80, -200, -111, -51,-180 , -10 ]
+  data: [-100, -80, -200, -111, -51,-180 , -10,300]
   }
   ],
   xaxis: {
@@ -359,7 +359,7 @@ function graphHour () {
   },
   {
     name: 'Power',
-    data: [-10, -80, -200, -111, -5,280 , 310 ]
+    data: [-10, -80, -200, -111, -5, 280 , 310,-200 ]
   }
  ],
   xaxis: {
@@ -627,7 +627,7 @@ function graphYearly () {
   },
   {
   name: 'Power',
-  data: [ -180 , -10, 0, -111, -51,35, 130, 117, 300, 25-10, 50, ]
+  data: [ -180 , -10, 0, -111, -51, 35, 130, 117, 300, 25,-10, 50 ]
   }
   ],
   xaxis: {
@@ -657,18 +657,18 @@ function graphYearly () {
 
 
   
-let checkbox = document.querySelector("#checkbox");
-let box = document.querySelector(".box");
+// let checkbox = document.querySelector("#checkbox");
+// let box = document.querySelector(".box");
  
 
-  function changeBg() {
+//   function changeBg() {
  
-    if (checkbox.checked === true){
-      box.style.backgroundColor = "blue";
-    } else {
-       box.style.backgroundColor = "white";
-    }
-  }
+//     if (checkbox.checked === true){
+//       box.style.backgroundColor = "blue";
+//     } else {
+//        box.style.backgroundColor = "white";
+//     }
+//   }
   
  
  
